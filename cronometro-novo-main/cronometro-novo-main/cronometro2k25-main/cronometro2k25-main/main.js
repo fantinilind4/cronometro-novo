@@ -13,3 +13,10 @@ for(let i=0;i <botoes.length;i++){
     }
     console.log(i)
 }
+
+const contadores = document.querySelectorAll(".contador");
+
+const tempoObjetivo1 = new Date("31.12.2025");
+const tempoObjetivo2 = new Date("01.03.2026");
+const tempoObjetivo3 = new Date("22.02.2031");
+const tempoObjetivo4 = new Date("01.06.2032");
