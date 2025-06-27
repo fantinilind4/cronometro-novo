@@ -17,9 +17,9 @@ console.log(i);
 
 const contadores = document.querySelectorAll(".contador");
 
-const tempoObjetivo1 = new Date("2025-12-31T00:00:00");
+const tempoObjetivo1 = new Date("2026-03-01T00:00:00");
 contadores[0].textContent = calculaTempo(tempoObjetivo1);
-const tempoObjetivo2 = new Date("2026-03-01T00:00:00");
+const tempoObjetivo2 = new Date("2028-06-02T00:00:00");
 contadores[1].textContent = calculaTempo(tempoObjetivo2);
 const tempoObjetivo3 = new Date("2031-02-22T00:00:00");
 contadores[2].textContent = calculaTempo(tempoObjetivo3);
