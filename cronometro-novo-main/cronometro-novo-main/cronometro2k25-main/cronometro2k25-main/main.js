@@ -23,23 +23,34 @@ const tempoObjetivo2 = new Date("2028-06-02T00:00:00");
 contadores[1].textContent = calculaTempo(tempoObjetivo2);
 const tempoObjetivo3 = new Date("2031-02-22T00:00:00");
 contadores[2].textContent = calculaTempo(tempoObjetivo3);
-const tempoObjetivo4 = new Date("2032-06-01T00:00:00");
+const tempoObjetivo4 = new Date("2033-06-01T00:00:00");
 contadores[3].textContent = calculaTempo(tempoObjetivo4);
+
+const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
+
+function atualizaCronometro(){
+    for (let i=0; i<contadores.length;i++){
+        contadores[i].textContent = calculaTempo(tempos[i]);   
+    }
+}
+
+atualizaCronometro();
+setInterval(atualizaCronometro, 1000);
+
 
 
 function calculaTempo(tempoObjetivo){
 let tempoAtual = new Date();
 let tempoFinal = tempoObjetivo - tempoAtual;
 let segundos = Math.floor (tempoFinal /1000);
-let minutos = Math.floor (segundos / 60);
-let horas = Math.floor (minutos / 60);
-let dias = Math.floor (horas / 24);
+let minutos = Math.floor (segundos/60);
+let horas = Math.floor (minutos/60);
+let dias = Math.floor (horas/24);
 let anos = Math.floor (dias/365);
 
 segundos %= 60;
-minutos %= 60;
-horas %= 24;
+minutos %=60;
+horas %=24;
 dias %=365;
- 
- return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
+return anos + " Anos " + dias + " Dias " + horas + " Horas " + minutos + " Minutos " + segundos + " Segundos ";
 }
